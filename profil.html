@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Nadila Ramadani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #FFD700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-avatar-default {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-avatar-default i {
+            font-size: 80px;
+            color: white;
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-list {
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+        
+        .info-list li {
+            list-style: none;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .info-list i {
+            color: #2E7D32;
+            width: 25px;
+            margin-top: 3px;
+        }
+        
+        .about-card {
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .about-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-list {
+            margin-bottom: 2rem;
+        }
+        
+        .education-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            list-style: none;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>Ramadhan Care</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="cerita.html">Cerita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <div class="profile-avatar-default">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <h2 class="profile-name">Nadila Ramadani</h2>
+            <div class="info-list">
+                <li><i class="fas fa-calendar-alt"></i> <strong>Tempat, Tgl Lahir:</strong><br>Aur Kuning, 29 Oktober 2003</li>
+                <li><i class="fas fa-heart"></i> <strong>Hobi:</strong><br>Bulu Tangkis, Voli, Nonton TikTok</li>
+                <li><i class="fas fa-rocket"></i> <strong>Cita-cita:</strong><br>Pengusaha Sukses</li>
+                <li><i class="fas fa-graduation-cap"></i> <strong>Status:</strong><br>Mahasiswa UIN Bukittinggi</li>
+            </div>
+        </div>
+        
+        <div class="about-card">
+            <h3><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</h3>
+            <ul class="education-list">
+                <li>SDN 18 Angge Palimbaktan</li>
+                <li>SMP Negeri 1 Palupuh</li>
+                <li>SMA Negeri 1 Palupuh</li>
+                <li>UIN Bukittinggi (Sekarang)</li>
+            </ul>
+            
+            <h3><i class="fas fa-user-circle"></i> Tentang Saya</h3>
+            <p>Saya adalah Nadila Ramadani, lahir di Aur Kuning pada 29 Oktober 2003. Saya memiliki minat dalam berbagai aktivitas seperti bermain bulu tangkis, voli, serta menonton video di TikTok untuk hiburan dan menambah wawasan. Saya menyelesaikan pendidikan di SDN 18 Angge Palimbaktan, kemudian melanjutkan ke SMP Negeri 1 Palupuh dan SMA Negeri 1 Palupuh. Saat ini saya melanjutkan pendidikan di UIN Bukittinggi. Saya adalah pribadi yang suka mencoba hal baru, belajar hal yang bermanfaat, dan terus berusaha mengembangkan diri. Saya memiliki cita-cita untuk menjadi seorang pengusaha sukses.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nadila Ramadani - Selamat Idul Fitri 1447 H</p>
+        <p>Mohon Maaf Lahir dan Batin</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

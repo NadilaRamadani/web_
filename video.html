@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video - Dokumentasi Lebaran | Nadila Ramadani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+        }
+        
+        .video-thumb {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .video-card:hover .video-thumb img {
+            transform: scale(1.05);
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.7);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+        
+        .play-overlay i {
+            font-size: 35px;
+            color: white;
+            margin-left: 5px;
+        }
+        
+        .video-duration {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .video-info {
+            padding: 1.2rem;
+        }
+        
+        .video-info h3 {
+            font-size: 1.1rem;
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-info p {
+            color: #666;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Modal Video */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .video-modal-content {
+            max-width: 900px;
+            width: 90%;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .video-modal-header {
+            background: #2E7D32;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        
+        .video-modal-header h3 {
+            margin: 0;
+        }
+        
+        .video-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .video-modal-close:hover {
+            transform: scale(1.1);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>Ramadhan Care</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="cerita.html">Cerita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <h1 class="section-title">Video Lebaran 2024</h1>
+        <p class="section-subtitle">Dokumentasi momen berharga selama Ramadhan dan Idul Fitri</p>
+        
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Kegiatan Ramadhan Hari ke-1')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Kegiatan+Ramadhan" alt="Kegiatan Ramadhan">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">2:30</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-moon"></i> Kegiatan Ramadhan Hari ke-1</h3>
+                    <p><i class="far fa-calendar-alt"></i> Ramadhan, 12 Maret 2024</p>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Momen Takbiran Idul Fitri')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Takbiran" alt="Momen Takbiran">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">3:15</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-mosque"></i> Momen Takbiran Idul Fitri</h3>
+                    <p><i class="far fa-calendar-alt"></i> 29 Ramadhan 1445 H</p>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Shalat Idul Fitri Berjamaah')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Shalat+Id" alt="Shalat Idul Fitri">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">4:20</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-pray"></i> Shalat Idul Fitri Berjamaah</h3>
+                    <p><i class="far fa-calendar-alt"></i> 1 Syawal 1445 H</p>
+                </div>
+            </div>
+            
+            <!-- Video 4 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Silaturahmi ke Rumah Saudara')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Silaturahmi" alt="Silaturahmi">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">2:45</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-handshake"></i> Silaturahmi ke Rumah Saudara</h3>
+                    <p><i class="far fa-calendar-alt"></i> 1 Syawal 1445 H</p>
+                </div>
+            </div>
+            
+            <!-- Video 5 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Makan Bersama Keluarga Besar')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Makan+Bersama" alt="Makan Bersama">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">1:50</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-utensils"></i> Makan Bersama Keluarga Besar</h3>
+                    <p><i class="far fa-calendar-alt"></i> 1 Syawal 1445 H</p>
+                </div>
+            </div>
+            
+            <!-- Video 6 -->
+            <div class="video-card" onclick="showVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Pawai Obor Ramadhan')">
+                <div class="video-thumb">
+                    <img src="https://placehold.co/600x400/2E7D32/white?text=Pawai+Obor" alt="Pawai Obor">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">3:30</div>
+                </div>
+                <div class="video-info">
+                    <h3><i class="fas fa-fire"></i> Pawai Obor Ramadhan</h3>
+                    <p><i class="far fa-calendar-alt"></i> Ramadhan, 20 Maret 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Video -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <h3 id="videoModalTitle">Putar Video</h3>
+                <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
+            </div>
+            <div class="video-container">
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nadila Ramadani - Selamat Idul Fitri 1447 H</p>
+        <p>Mohon Maaf Lahir dan Batin</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function showVideoModal(videoUrl, title) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            const modalTitle = document.getElementById('videoModalTitle');
+            
+            iframe.src = videoUrl + '?autoplay=1';
+            modalTitle.innerHTML = '<i class="fas fa-video"></i> ' + title;
+            modal.style.display = 'flex';
+        }
+        
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = '';
+            modal.style.display = 'none';
+        }
+        
+        // Tutup dengan tombol ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+    </script>
+</body>
+</html>

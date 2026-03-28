@@ -1,0 +1,1049 @@
+/* ============================================
+   WEBSITE KEGIATAN RAMADHAN & IDUL FITRI
+   Materi: CSS, CSS Modern, Responsive Design
+   Warna: Hijau Ramadhan (#2E7D32, #1B5E20)
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 50%, #C8E6C9 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== NAVIGATION BAR (CSS Flexbox) ========== */
+.navbar {
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo i {
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: #FFD700;
+    color: #2E7D32;
+    transform: translateY(-2px);
+}
+
+/* ========== BACK TO HOME BUTTON ========== */
+.back-home {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-home:hover {
+    transform: scale(1.1);
+    background: #FFD700;
+    color: #2E7D32;
+}
+
+/* ========== HERO SECTION (CSS Grid & Flexbox) ========== */
+.hero {
+    background: linear-gradient(135deg, #2E7D32, #1B5E20, #0A3A0A);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="white" d="M10,10 L20,10 L15,20 Z M30,30 L40,30 L35,40 Z M50,50 L60,50 L55,60 Z M70,70 L80,70 L75,80 Z M90,90 L100,90 L95,100 Z"/><circle cx="25" cy="75" r="5" fill="white"/><circle cx="75" cy="25" r="5" fill="white"/></svg>');
+    background-repeat: repeat;
+    background-size: 40px;
+    animation: movePattern 20s linear infinite;
+}
+
+@keyframes movePattern {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, #F1F8E9, transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: white;
+}
+
+/* ========== ANIMASI KETUPAT (CSS Animation & Keyframes) ========== */
+.ketupat-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 30px;
+}
+
+.ketupat {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    background: #FFD700;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: floatKetupat 3s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+.ketupat:nth-child(1) { top: 0; left: 44px; animation-delay: 0s; }
+.ketupat:nth-child(2) { top: 44px; right: 0; animation-delay: 0.3s; }
+.ketupat:nth-child(3) { bottom: 0; left: 44px; animation-delay: 0.6s; }
+.ketupat:nth-child(4) { top: 44px; left: 0; animation-delay: 0.9s; }
+
+.ketupat-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(135deg, #FFA500, #FF8C00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+.ketupat-center i {
+    font-size: 28px;
+    color: white;
+}
+
+@keyframes floatKetupat {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-12px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.12); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease 0.2s both;
+}
+
+.greeting-card {
+    background: rgba(255,255,255,0.98);
+    border-radius: 40px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: fadeInUp 1s ease 0.4s both;
+    transition: transform 0.3s;
+}
+
+.greeting-card:hover {
+    transform: translateY(-5px);
+}
+
+.greeting-card .message {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2E7D32;
+    margin: 1rem 0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.btn {
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #2E7D32;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    background: rgba(0,0,0,0.3);
+}
+
+.btn-outline:hover {
+    background: #FFD700;
+    color: #2E7D32;
+    transform: translateY(-5px);
+}
+
+/* ========== SECTION UMUM ========== */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2E7D32;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* ========== FILTER BUTTONS ========== */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #2E7D32;
+    background: transparent;
+    color: #2E7D32;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #2E7D32;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ========== GALLERY GRID (CSS Grid) ========== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-caption {
+    padding: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    background: white;
+    color: #2E7D32;
+    border-top: 1px solid #eee;
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+/* ========== VIDEO GRID ========== */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.video-card:hover .video-thumb img {
+    transform: scale(1.08);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay i {
+    font-size: 35px;
+    color: white;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.video-info {
+    padding: 1.2rem;
+}
+
+.video-info h3 {
+    color: #2E7D32;
+    margin-bottom: 0.5rem;
+}
+
+/* ========== PROFIL PAGE ========== */
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #FFD700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar-default {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar-default i {
+    font-size: 80px;
+    color: white;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    color: #2E7D32;
+    margin-bottom: 0.5rem;
+}
+
+.info-list {
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.info-list li {
+    list-style: none;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-list i {
+    color: #2E7D32;
+    width: 25px;
+    margin-top: 3px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card h3 {
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+}
+
+.education-list {
+    margin-bottom: 2rem;
+}
+
+.education-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    list-style: none;
+}
+
+/* ========== CERITA PAGE ========== */
+.story-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.story-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.story-header h1 {
+    font-size: 2.5rem;
+    color: #2E7D32;
+}
+
+.story-card {
+    background: white;
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E8F5E9;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+}
+
+.story-card h2 {
+    color: #2E7D32;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.story-subtitle {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+}
+
+.story-content {
+    line-height: 1.9;
+    color: #444;
+}
+
+.highlight {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2E7D32;
+    border-left: 4px solid #FFD700;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.quote-card {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.quote-card i {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+/* ========== KONTAK PAGE ========== */
+.kontak-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.kontak-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.kontak-header h1 {
+    font-size: 2.5rem;
+    color: #2E7D32;
+}
+
+.kontak-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.kontak-card {
+    background: white;
+    border-radius: 25px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.kontak-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+.kontak-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    transition: transform 0.3s;
+}
+
+.kontak-card:hover .kontak-icon {
+    transform: scale(1.1);
+}
+
+.kontak-icon i {
+    font-size: 40px;
+    color: #FFD700;
+}
+
+.kontak-card h3 {
+    color: #2E7D32;
+    margin-bottom: 0.5rem;
+}
+
+.kontak-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2E7D32;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.kontak-btn:hover {
+    background: #1B5E20;
+    transform: translateY(-2px);
+}
+
+/* ========== FORM SECTION ========== */
+.form-section {
+    background: white;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-top: 2rem;
+}
+
+.form-section h3 {
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E8F5E9;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2E7D32;
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #2E7D32;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+/* ========== MAP SECTION ========== */
+.map-section {
+    margin-top: 2rem;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+/* ========== MODAL (CSS untuk popup) ========== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-caption {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal-content {
+    max-width: 900px;
+    width: 90%;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-modal-header {
+    background: #2E7D32;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.video-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: linear-gradient(135deg, #1B5E20, #0A3A0A);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+/* ========== ANIMATIONS (CSS Keyframes) ========== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN (Media Queries) ========== */
+@media (max-width: 992px) {
+    .gallery-grid,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .profile-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-grid,
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .kontak-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ketupat-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .ketupat {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .ketupat:nth-child(1) { left: 31px; }
+    .ketupat:nth-child(2) { top: 31px; }
+    .ketupat:nth-child(3) { left: 31px; }
+    .ketupat:nth-child(4) { top: 31px; }
+    
+    .ketupat-center {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .ketupat-center i {
+        font-size: 20px;
+    }
+    
+    .back-home {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .greeting-card .message {
+        font-size: 1.3rem;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .gallery-card img {
+        height: 220px;
+    }
+}

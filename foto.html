@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto - Galeri Lebaran</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>Ramadhan Care</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="cerita.html">Cerita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <h1 class="section-title">Galeri Lebaran 2024</h1>
+        <p class="section-subtitle">Foto-foto momen indah selama hari raya</p>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all')">Semua</button>
+            <button class="filter-btn" onclick="filterGallery('sendiri')">Foto Sendiri</button>
+            <button class="filter-btn" onclick="filterGallery('teman')">Bersama Teman</button>
+            <button class="filter-btn" onclick="filterGallery('keluarga')">Bersama Keluarga</button>
+            <button class="filter-btn" onclick="filterGallery('worship')">Shalat Id & Berdoa</button>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- Foto Sendiri -->
+            <div class="gallery-item sendiri">
+                <div class="gallery-card" onclick="showImageModal(this.querySelector('img'), this.querySelector('.gallery-caption').innerHTML)">
+                    <img src="https://placehold.co/600x450/2E7D32/white?text=Foto+Selfie+Lebaran" alt="Foto Selfie">
+                    <div class="gallery-caption"><i class="fas fa-camera"></i> Foto Selfie Lebaran 2024</div>
+                </div>
+            </div>
+            <div class="gallery-item sendiri">
+                <div class="gallery-card" onclick="showImageModal(this.querySelector('img'), this.querySelector('.gallery-caption').innerHTML)">
+                    <img src="https://placehold.co/600x450/2E7D32/white?text=Baju+Baru+Lebaran" alt="Baju Baru">
+                    <div class="gallery-caption"><i class="fas fa-camera"></i> Momen Lebaran dengan Baju Baru</div>
+                </div>
+            </div>
+            <div class="gallery-item sendiri">
+                <div class="gallery-card" onclick="showImageModal(this.querySelector('img'), this.querySelector('.gallery-caption').innerHTML)">
+                    <img src="https://placehold.co/600x450/2E7D32/white?text=Selfie+Masjid" alt="Self

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Hubungi Nadila Ramadani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .kontak-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .kontak-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .kontak-header h1 {
+            font-size: 2.5rem;
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .kontak-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .kontak-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .kontak-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .kontak-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+        
+        .kontak-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .kontak-card:hover .kontak-icon {
+            transform: scale(1.1);
+        }
+        
+        .kontak-icon i {
+            font-size: 40px;
+            color: #FFD700;
+        }
+        
+        .kontak-card h3 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .kontak-card .kontak-value {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            word-break: break-all;
+        }
+        
+        .kontak-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2E7D32;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .kontak-btn:hover {
+            background: #1B5E20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46,125,50,0.3);
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+        
+        .form-section h3 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E8F5E9;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2E7D32;
+            box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #2E7D32;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-top: 2rem;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        
+        .map-section iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .kontak-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .kontak-container {
+                padding: 2rem 1rem;
+            }
+            
+            .kontak-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .kontak-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .kontak-icon i {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>Ramadhan Care</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="cerita.html">Cerita</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="kontak-container">
+        <div class="kontak-header">
+            <h1>Hubungi Nadila</h1>
+            <p>Silakan hubungi saya melalui kontak di bawah ini</p>
+            <div class="ketupat-container" style="width: 60px; height: 60px; margin-top: 1rem;">
+                <div class="ketupat" style="width: 22px; height: 22px; left: 19px;"></div>
+                <div class="ketupat" style="width: 22px; height: 22px; top: 19px; right: 0;"></div>
+                <div class="ketupat" style="width: 22px; height: 22px; bottom: 0; left: 19px;"></div>
+                <div class="ketupat" style="width: 22px; height: 22px; top: 19px; left: 0;"></div>
+                <div class="ketupat-center" style="width: 28px; height: 28px;">
+                    <i class="fas fa-envelope" style="font-size: 14px;"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="kontak-grid">
+            <!-- WhatsApp -->
+            <div class="kontak-card">
+                <div class="kontak-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p class="kontak-value">+62 823-9040-0791</p>
+                <a href="https://wa.me/6282390400791" class="kontak-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat Sekarang
+                </a>
+            </div>
+            
+            <!-- Email -->
+            <div class="kontak-card">
+                <div class="kontak-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p class="kontak-value">nadilaramadani@gmail.com</p>
+                <a href="mailto:nadilaramadani@gmail.com" class="kontak-btn">
+                    <i class="fas fa-envelope"></i> Kirim Email
+                </a>
+            </div>
+            
+            <!-- Instagram -->
+            <div class="kontak-card">
+                <div class="kontak-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p class="kontak-value">@nadila_ramadani</p>
+                <a href="https://instagram.com/nadila_ramadani" class="kontak-btn" target="_blank">
+                    <i class="fab fa-instagram"></i> Follow
+                </a>
+            </div>
+            
+            <!-- Alamat -->
+            <div class="kontak-card">
+                <div class="kontak-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Alamat</h3>
+                <p class="kontak-value">Aur Kuning, Sumatera Barat, Indonesia</p>
+                <button class="kontak-btn" onclick="alert('Aur Kuning, Sumatera Barat, Indonesia')">
+                    <i class="fas fa-map"></i> Lihat Peta
+                </button>
+            </div>
+        </div>
+        
+        <!-- Form Pesan -->
+        <div class="form-section">
+            <h3><i class="fas fa-paper-plane"></i> Kirim Pesan</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Anda" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> Pesan</label>
+                    <textarea id="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Kirim Pesan
+                </button>
+            </form>
+        </div>
+        
+        <!-- Map -->
+        <div class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127648.85564718672!2d100.3005347!3d-0.304016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd53a67048f4e4d%3A0xbfd82e3e73ec2ad5!2sBukittinggi%2C%20Kota%20
